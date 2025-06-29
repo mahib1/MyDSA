@@ -1,0 +1,26 @@
+#! /bin/zsh
+
+if [ -e "$1".cpp ]; then 
+  echo "===================================================="
+  echo "File $1.cpp exists, Compiling now..."
+  g++ "$1".cpp -o ./bin/"$1"
+  if [ $? -ne 0 ]; then 
+    echo "===================================================="
+    echo "Compilation Failed!"
+    echo "Exiting..."
+  else  
+    echo "===================================================="
+    echo "File Compiled Successfully!"
+    echo "===================================================="
+    echo "Running Binary Now..."
+    ./bin/$1 
+    echo "===================================================="
+    echo "Happy Coding!"
+  fi
+else 
+  echo "===================================================="
+  echo "File Not Found!"
+fi
+
+echo "===================================================="
+
