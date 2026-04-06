@@ -7,6 +7,8 @@ using namespace std;
  
  
 vector<int> parent, r;
+
+//union find implementation
  
 int find(int x) {
   if(parent[x] == x) return x; 
